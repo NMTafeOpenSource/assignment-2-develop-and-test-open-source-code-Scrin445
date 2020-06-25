@@ -6,8 +6,8 @@ public class FuelPurchase {
         private double cost = 0;
 
 	public double getFuelEconomy() {
+		return fuelEconomy;
             //return this.cost / this.litres;
-        return this.cost / this.litres;
 	}
         
         public double getFuel(){
