@@ -18,7 +18,13 @@ public class VehicleStarter {
      * @param args the command line arguments
      */
     public static void main(String[] args) {        
-        Vehicle v = new Vehicle("Ford", "T812", 2014);
+        Vehicle v = new Vehicle(
+                "Holden",
+                "Commodore",
+                2014,
+        "1 ABD 760",
+                294.0,
+                20);
 		
 		// Vehicle sample distance
             v.addFuel(new Random().nextDouble()*10, 1.3);
