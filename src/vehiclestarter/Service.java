@@ -1,5 +1,7 @@
 package vehiclestarter;
 
+import java.util.Date;
+
 public class Service {
     
     // Constant to indicate that the vehicle needs to be serviced every 10,000km
@@ -8,6 +10,7 @@ public class Service {
     private int lastServiceOdometerKm=0;
     private int serviceCount=0;
     // TODO add lastServiceDate
+    private String lastServiceDate;
     
     // return the last service
     public int getLastServiceOdometerKm()
@@ -22,7 +25,9 @@ public class Service {
      */
     public void recordService(int distance)
     {
+        Date date = new Date();
         this.lastServiceOdometerKm = distance;
+        this.lastServiceDate = String.format("%1$s %2$tB %2$td, %2$tY", date);
         this.serviceCount ++;
     }
     
