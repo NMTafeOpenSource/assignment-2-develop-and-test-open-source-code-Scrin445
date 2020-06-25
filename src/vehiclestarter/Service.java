@@ -11,7 +11,7 @@ public class Service {
     private int serviceCount=0;
     // TODO add lastServiceDate
     private String lastServiceDate;
-    
+
     // return the last service
     public int getLastServiceOdometerKm()
     {

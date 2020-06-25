@@ -17,20 +17,30 @@ public class VehicleStarter {
     /** Main entry point to the program
      * @param args the command line arguments
      */
-    public static void main(String[] args) {        
+    public static void main(String[] args) {
+
+        Vehicle[] list = new Vehicle[10];
         Vehicle v = new Vehicle(
                 "Holden",
                 "Commodore",
                 2014,
         "1 ABD 760",
-                294.0,
+                100294.0,
                 20);
-		
-		// Vehicle sample distance
-            v.addFuel(new Random().nextDouble()*10, 1.3);
+        list[0] = v;
+        list[1] = v;
+        list[2] = v;
 
-            v.printDetails();                
-            System.out.println("\n\n");
+		// Vehicle sample distance
+        v.addFuel(new Random().nextDouble()*10, 1.3);
+
+        list[0].printDetails();
+        System.out.println("\n\n");
+        list[1].printDetails();
+        System.out.println("\n\n");
+        list[2].printDetails();
+
+
     }
     
 }

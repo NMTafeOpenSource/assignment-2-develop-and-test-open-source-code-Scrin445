@@ -1,6 +1,8 @@
 package vehiclestarter;
 
- 
+
+import java.text.DecimalFormat;
+
 public class Vehicle {
 	private String	manufacturer;
 	private String	model;
@@ -13,7 +15,7 @@ public class Vehicle {
 	private double tankCapacity;
 
 	private FuelPurchase	fuelPurchase;
-	private Service service;
+	private Service service = new Service();
 
 	/**
 	 * Class constructor specifying name of make (manufacturer), model and year
@@ -44,14 +46,15 @@ public class Vehicle {
 	 * Prints details for {@link Vehicle}
 	 */
 	public void printDetails() {
+		DecimalFormat formatter = new DecimalFormat("#0.00");
 		System.out.println("Vehicle: "+ manufacturer + " " + model + " " + makeYear);
                 // TODO Display additional information about this vehicle
 		System.out.println("Registration No: " + this.registrationNumber);
-		System.out.println("Total kilometres travelled: " + this.odometerReading + "km");
+		System.out.println("Total kilometres travelled: " + this.odometerReading + " km");
 		System.out.println("Total services: " + service.getServiceCount());
-		System.out.println("Revenue recorded: " + fuelPurchase.getFuelEconomy() * this.odometerReading);
-		System.out.println("Kilometres since last service: " + service.getLastServiceOdometerKm() + "km");
-		System.out.println("Fuel economy: " + fuelPurchase.getFuelEconomy() + " $/L");
+		System.out.println("Revenue recorded: $" + formatter.format(fuelPurchase.getFuelEconomy() * this.odometerReading));
+		System.out.println("Kilometres since last service: " + service.getLastServiceOdometerKm() + " km");
+		System.out.println("Fuel economy: " + formatter.format(fuelPurchase.getFuelEconomy()) + " $/L");
 		System.out.println("Requires a service: " + needService());
 	}
 
